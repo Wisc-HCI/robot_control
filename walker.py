@@ -74,7 +74,7 @@ def main(robotIP):
 
     time.sleep(2.0)
 
-    #####################
+    """#####################
     ## Arms User Motion
     #####################
     # Arms motion from user have always the priority than walk arms motion
@@ -92,7 +92,7 @@ def main(robotIP):
     motionProxy.angleInterpolationWithSpeed(JointNames, Arm1, pFractionMaxSpeed)
 
     time.sleep(2.0)
-
+"""
     #####################
     ## End Walk
     #####################

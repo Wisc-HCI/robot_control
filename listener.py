@@ -1,13 +1,18 @@
 import rospy
 from std_msgs.msg import String
 from naoqi import ALProxy
+import tts
+import simpleWalk
 
 def callback(data):
-	rospy.loginfo(rospy.get_caller_id() + "I heard %s", data.data)
-	tts = ALProxy("ALTextToSpeech", "192.168.1.201", 9559)
-	tts.setLanguage("English")
-	tts.say(data.data)
+	tokens = data.data.split(' ')
+	if tokens[0] == "tts":
+		tts.main(tokens[1]) 
+	elif tokens[0] == "simpleWalk": 
+		simpleWalk.main()
 
+		
+		
 
 def listener():
 
