@@ -3,13 +3,16 @@ from std_msgs.msg import String
 from naoqi import ALProxy
 import tts
 import simpleWalk
+import moveHead
 
 def callback(data):
 	tokens = data.data.split(' ')
 	if tokens[0] == "tts":
 		tts.main(tokens[1]) 
 	elif tokens[0] == "simpleWalk": 
-		simpleWalk.main()
+		simpleWalk.main(int(tokens[1]))
+	elif tokens[0] == "moveHead":
+		moveHead.main()
 
 		
 		
@@ -23,7 +26,7 @@ def listener():
 	# run simultaneously.
 	rospy.init_node('listener', anonymous=True)
 
-	rospy.Subscriber("chatter", String, callback)
+	rospy.Subscriber("robot_control", String, callback)
 
 	# spin() simply keeps python from exiting until this node is stopped
 	rospy.spin()
