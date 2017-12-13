@@ -6,6 +6,7 @@ import simpleWalk
 import moveHead
 import standby
 import stand 
+import moveArm
 def callback(data):
 	tokens = data.data.split(' ')
 	if tokens[0] == "tts":
@@ -18,6 +19,8 @@ def callback(data):
 		standby.main()
 	elif tokens[0] == "stand":
 		stand.main()
+	elif tokens[0] == "moveArm":
+		moveArm.main(tokens[1],tokens[2],tokens[3], tokens[4],tokens[5])
 		
 		
 
