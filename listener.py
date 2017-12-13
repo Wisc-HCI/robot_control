@@ -4,7 +4,8 @@ from naoqi import ALProxy
 import tts
 import simpleWalk
 import moveHead
-
+import standby
+import stand 
 def callback(data):
 	tokens = data.data.split(' ')
 	if tokens[0] == "tts":
@@ -12,8 +13,11 @@ def callback(data):
 	elif tokens[0] == "simpleWalk": 
 		simpleWalk.main(int(tokens[1]))
 	elif tokens[0] == "moveHead":
-		moveHead.main()
-
+		moveHead.main(tokens[1],tokens[2],tokens[3])
+	elif tokens[0] == "standby":
+		standby.main()
+	elif tokens[0] == "stand":
+		stand.main()
 		
 		
 

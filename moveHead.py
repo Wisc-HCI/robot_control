@@ -16,7 +16,7 @@ def StiffnessOn(proxy):
     proxy.stiffnessInterpolation(pNames, pStiffnessLists, pTimeLists)
 
 
-def main():
+def main(x,y,z):
     ''' Example of a whole body head orientation control
         Warning: Needs a PoseInit before executing
                  Whole body balancer must be inactivated at the end of the script
@@ -54,7 +54,7 @@ def main():
     # Y Axis Head Orientation feasible movement = [-75.0, +70.0] degree
     # Z Axis Head Orientation feasible movement = [-30.0, +30.0] degree
 
-    targetCoordinateList = [
+    """ targetCoordinateList = [
     [+20.0,  00.0,  00.0], # target 0
     [-20.0,  00.0,  00.0], # target 1
     [ 00.0, +70.0,  00.0], # target 2
@@ -65,6 +65,9 @@ def main():
     [ 00.0, -75.0, -30.0], # target 7
     [ 00.0,  00.0,  00.0], # target 8
     ]
+"""
+    targetCoordinateList = [[float(x), float(y),float(z)]]
+
 
     # wbSetEffectorControl is a non blocking function
     # time.sleep allow head go to his target
