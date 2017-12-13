@@ -40,7 +40,7 @@ def main(side,f,s,t,l):
 
 
     # Send NAO to Pose Init
-
+ 
     postureProxy.goToPosture("StandInit", 0.5)
 
 
@@ -58,11 +58,14 @@ def main(side,f,s,t,l):
   	  motionProxy.angleInterpolationWithSpeed(leftJointNames, Arm1, speed)
     elif side == "r":
 	  motionProxy.angleInterpolationWithSpeed(rightJointNames, Arm1, speed)
-
+  """  elif side == "b":
+	  for name in rightJointNames:
+          	leftJointNames.append(name)
+	  for value in Arm1: 
+         	 Arm1.append(value)
+	  motionProxy.angleInterpolationWithSpeed(leftJointNames, Arm1, speed)"""
 
     time.sleep(2.0)
-
-
 
 
 

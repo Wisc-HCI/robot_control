@@ -38,7 +38,7 @@ def main(x,y,z):
     StiffnessOn(motionProxy)
 
     # Send NAO to Pose Init
-    postureProxy.goToPosture("StandInit", 0.5)
+   # postureProxy.goToPosture("StandInit", 0.5)
 
     effectorName = "Head"
 
